@@ -28,7 +28,7 @@ namespace TrebovanjeINabavke.Controllers
                 emailPoruka.To.Add( mejlVM.NaMejl /*new MailAddress("name@gmail.com")*/); //replace with valid value
                 emailPoruka.Subject = "Your email subject";
                 emailPoruka.Body = mejlVM.Sadrzaj;
-                
+                var korisnik=User.Identity.Name;
                 //emailPoruka.IsBodyHtml = true;
                 using (var smtp = new SmtpClient())
                 {
